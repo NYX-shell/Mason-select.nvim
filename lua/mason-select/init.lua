@@ -30,12 +30,12 @@ M.open = function(languages)
   vim.print(action .. "ing " .. selected_package_name) -- prompt
 
   if action == "Install" then
-    selected_package:install()
+    vim.cmd ":MasonInstall stylua"
   elseif action == "Uninstall" then
     selected_package:uninstall()
   elseif action == "Reinstall" then
     selected_package:uninstall()
-    selected_package:install()
+    vim.cmd ":MasonInstall stylua"
   else
     return
   end
