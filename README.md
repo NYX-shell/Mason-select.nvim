@@ -2,6 +2,10 @@
 
 An mason package filter, selector. use "vim.ui.select" to select package and action.
 
+## Show Case
+
+![show case](doc/image/showcase.png)
+
 ## Install
 
 how to install Mason-select
