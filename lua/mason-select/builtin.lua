@@ -40,7 +40,7 @@ function M.select_package(packages_name)
 end
 
 function M.select_action(package)
-  local action = ""
+  local action
 
   if package:is_installed() then
     local actions = { "Reinstall", "Uninstall" }
@@ -48,7 +48,7 @@ function M.select_action(package)
       if item then action = item end
     end)
   else
-    action = "install"
+    action = "Install"
   end
 
   return action

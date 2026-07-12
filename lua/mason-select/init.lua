@@ -26,16 +26,17 @@ M.open = function(languages)
   local selected_package = mason.get_package(selected_package_name)
 
   local action = builtin.select_action(selected_package)
+  if not action then return end
 
   vim.print(action .. "ing " .. selected_package_name) -- prompt
 
   if action == "Install" then
-    vim.cmd(":MasonInstall " .. selected_package_name)
+    selected_package:install()
   elseif action == "Uninstall" then
     selected_package:uninstall()
   elseif action == "Reinstall" then
     selected_package:uninstall()
-    vim.cmd(":MasonInstall " .. selected_package_name)
+    selected_package:install()
   else
     return
   end
