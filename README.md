@@ -10,7 +10,7 @@ how to install Mason-select
 
 ```lua
   {
-    dir = "NYX-shell/mason-select.nvim/",
+    "NYX-shell/Mason-select.nvim",
     dependencies = { "mason-org/mason.nvim" },
     opts = {},
 
