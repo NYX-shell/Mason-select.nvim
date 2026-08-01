@@ -6,14 +6,14 @@ local M = {}
 -- vim.print() -- for debug
 M.open = function(include_languages)
   -- filter languages from opts and arg1
-  local available_packages_names = builtin.available_packages_names(include_languages)
-  if available_packages_names == nil then
+  local available_packages_name = M.get_available_packages_name(include_languages)
+  if available_packages_name == nil then
     vim.notify("Mason-select: no found available package", vim.log.levels.WARN)
     return
   end
 
   -- call builtin selecter
-  local selected_package_name = builtin.select_package(available_packages_names)
+  local selected_package_name = builtin.select_package(available_packages_name)
   if not selected_package_name then return end
 
   -- get mason package object
@@ -35,6 +35,10 @@ M.open = function(include_languages)
   else
     return
   end
+end
+
+function M.get_available_packages_name(include_languages)
+  return builtin.available_packages_name(include_languages)
 end
 
 --@param opts? myplugin.Config

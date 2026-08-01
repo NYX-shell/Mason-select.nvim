@@ -10,21 +10,21 @@ function M.filter(packages_name, filter)
   -- walk though all packages name
   for _, package_name in ipairs(packages_name) do
     local package = mason.get_package(package_name)
-    local filter_categories = false
-    local filter_languages = false
-
+    local match_categories = false
+    local match_languages = false
+    -- match filter
     for _, value in pairs(filter.spec.categories) do
       if utils.has_string(package.spec.categories, value) then
-        filter_categories = true
+        match_categories = true
       end
     end
     for _, value in pairs(filter.spec.languages) do
       if utils.has_string(package.spec.languages, value) then
-        filter_languages = true
+        match_languages = true
       end
     end
 
-    if filter_categories and filter_languages then
+    if match_categories and match_languages then
       table.insert(filtered_packages_name, package_name)
     end
   end
@@ -32,7 +32,7 @@ function M.filter(packages_name, filter)
   return filtered_packages_name
 end
 
-function M.available_packages_names(include_languages)
+function M.available_packages_name(include_languages)
   local available_packages_name = mason.get_packages_name()
   if next(available_packages_name) == nil then
     vim.notify("Mason-registry: return \"nil\"\nCheck is Mason config correctly.", vim.log.levels.ERROR)
