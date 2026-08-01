@@ -23,7 +23,7 @@ M.open = function(include_languages)
   local action = builtin.select_action(selected_package)
   if not action then return end
 
-  vim.print(action .. "ing " .. selected_package_name) -- prompt
+  vim.notify(action .. "ing " .. selected_package_name, vim.log.levels.INFO)
 
   if action == "Install" then
     selected_package:install()
@@ -37,9 +37,7 @@ M.open = function(include_languages)
   end
 end
 
-function M.get_available_packages_name(include_languages)
-  return builtin.available_packages_name(include_languages)
-end
+function M.get_available_packages_name(include_languages) return builtin.available_packages_name(include_languages) end
 
 --@param opts? myplugin.Config
 function M.setup(opts) require("mason-select.config").setup(opts) end
