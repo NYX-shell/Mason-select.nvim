@@ -47,7 +47,11 @@ function M.available_packages_name(include_languages)
 end
 
 function M.select_package(packages_name)
-  vim.ui.select(packages_name, { prompt = "Support package(Mason)" }, function(package_name)
+  local prompt = "Support package(Mason)"
+  if config.options.nerdfont then prompt = "󰏗 " .. prompt end
+  vim.ui.select(packages_name, {
+    prompt = prompt,
+  }, function(package_name)
     if package_name then M.select_action(package_name) end
   end)
 end

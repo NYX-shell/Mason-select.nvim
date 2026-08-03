@@ -1,6 +1,7 @@
 local M = {}
 local default = {
   auto = true,
+  nerdfont = false,
   filter = {
     spec = {
       categories = {
