@@ -45,8 +45,8 @@ local default = {
 }
 ```
 
-## Telescopeo
-See: [telescopeo-ui-select.nvim](https://github.com/nvim-telescope/telescope-ui-select.nvim)
+## Telescope
+See: [telescope-ui-select.nvim](https://github.com/nvim-telescope/telescope-ui-select.nvim)
 
 ## Usage
 
