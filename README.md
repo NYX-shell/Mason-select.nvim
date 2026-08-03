@@ -45,6 +45,9 @@ local default = {
 }
 ```
 
+## Telescopeo
+See: [telescopeo-ui-select.nvim](https://github.com/nvim-telescope/telescope-ui-select.nvim)
+
 ## Usage
 
 You can manually include lanuage for your need.
@@ -52,3 +55,4 @@ You can manually include lanuage for your need.
 ```lua
 require("mason-select").open({"rust", "c++"}) 
 ```
+
