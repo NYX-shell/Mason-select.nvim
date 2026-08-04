@@ -29,6 +29,7 @@ Default options:
 ```lua
 local default = {
   auto = true, -- Auto include current language
+  nerdfomt = true,
   filter = {
     spec = {
       categories = {
