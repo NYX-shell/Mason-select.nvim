@@ -29,7 +29,7 @@ Default options:
 ```lua
 local default = {
   auto = true, -- Auto include current language
-  nerdfomt = true,
+  nerdfont = true,
   filter = {
     spec = {
       categories = {
